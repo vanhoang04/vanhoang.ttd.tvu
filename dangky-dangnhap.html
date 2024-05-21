@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style/dkdn.css"><!------------------nhap file css------>
+    <title>Đăng Nhập & Đăng Ký</title>
+    <link rel="shortcut icon" href="image/tech-box.png">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p><img src="image/logo-full.png"></p>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Đăng Nhập</button>
+                <button class="btn" id="registerBtn" onclick="register()">Đăng Ký</button>
+            </div>
+        </nav>
+        <div id="popupNote" class="popup-note">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <p>//Ghi Chú: đăng nhập web quản lý<br>//tài khoản: admin@tv.com <br>//mật khẩu: 1234</p>
+        </div>
+        <div class="form-box">
+            <form id="loginForm" class="login-container" onsubmit="return loginUser()">
+                <div class="intro">Hãy đăng nhập để khám phá <br>TechBox-Store😊</div>
+                <div class="top">
+                    <span>Bạn chưa có tài khoản <a href="#" onclick="register()">Đăng ký ngay</a></span>
+                    <header>Đăng nhập</header>
+                </div>
+                <div class="input-box">
+                    <input type="email" class="input-field" placeholder="Nhập email của bạn" name="loginUsername">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Mật khẩu" name="loginPassword">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Đăng Nhập">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check"> Ghi Nhớ Tôi</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">Bạn quên mật khẩu ?</a></label>
+                    </div>
+                </div>
+            </form>
+    
+            <!-- form Đăng Ký -->
+            <form id="registerForm" class="register-container" onsubmit="return registerUser()">
+                <div class="top">
+                    <div class="intro">Tech-Store Khởi đầu công nghệ<br>Chào mừng</div>
+                    <span>Bạn đã có tài khoản <a href="#" onclick="login()">Đăng nhập</a></span>
+                    <header>Đăng Ký tài khoản</header>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Họ của bạn" name="registerFirstName">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Tên của bạn" name="registerLastName">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="email" class="input-field" placeholder="Địa chỉ Email" name="registerEmail">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Tạo mật khẩu" name="registerPassword">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Đăng kí ngay">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check">Ghi Nhớ tôi</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#"></a></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> 
+    
+    <script>
+        function loginUser() {
+            var username = document.forms["loginForm"]["loginUsername"].value;
+            var password = document.forms["loginForm"]["loginPassword"].value;
+    
+            // Nếu tên đăng nhập và mật khẩu đúng
+            if (username === "admin@tv.com" && password === "1234") {
+                // Chuyển hướng đến trang admin
+                window.location.href = "admin/admin.html";
+                return false; // Dừng xử lý tiếp theo
+            } else {
+                var userData = JSON.parse(localStorage.getItem(username));
+                if (userData !== null && userData.password === password) {
+                    alert("Đăng nhập thành công! Chào mừng " + userData.firstName + "!");
+                    window.location.href = "index.html";
+                } else {
+                    alert("Sai tên đăng nhập hoặc mật khẩu!");
+                }
+            }
+            return false;
+        }
+    
+        function registerUser() {
+            var firstName = document.forms["registerForm"]["registerFirstName"].value;
+            var lastName = document.forms["registerForm"]["registerLastName"].value;
+            var email = document.forms["registerForm"]["registerEmail"].value;
+            var password = document.forms["registerForm"]["registerPassword"].value;
+            var userData = {
+                "firstName": firstName,
+                "lastName": lastName,
+                "email": email,
+                "password": password
+            };
+            localStorage.setItem(email, JSON.stringify(userData));
+            alert("Đăng ký thành công!");
+            return true;
+        }
+    
+        var a = document.getElementById("loginBtn");
+        var b = document.getElementById("registerBtn");
+        var x = document.getElementById("loginForm");
+        var y = document.getElementById("registerForm");
+    
+        function login() {
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            a.className += " white-btn";
+            b.className = "btn";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+    
+        function register() {
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            a.className = "btn";
+            b.className += " white-btn";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+        function openPopup() {
+    var popup = document.getElementById("popupNote");
+    popup.style.display = "block";
+}
+
+function closePopup() {
+    var popup = document.getElementById("popupNote");
+    popup.style.display = "none";
+}
+
+// Hiển thị popup ghi chú khi trang được tải
+window.onload = function() {
+    openPopup();
+};
+
+    </script>
+    
+</html>
+

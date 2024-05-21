@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> TechBox-Store</title>
+    <!-----lk css--->
+    <link rel="stylesheet" href="style/style.css">
+     <!--------logo title------>
+    <link rel="shortcut icon" href="image/tech-box.png">
+    <!--------bootrap icon-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+<body>
+    <!----------bar---------->
+    <header>
+        <div class="nav container">
+            <!------------logo----------->
+            <a href="#" class="logo">
+                <img src="/image/logo-full.png" alt="">
+            </a>
+            <ul class="navbar">
+                <li><a href="#trangchu" class="active">Trang Chủ</a></li>
+                <li><a href="#noibat">Nổi bật</a></li>
+                <li><a href="#cuahang">Cửa Hàng</a></li>
+                <li><a href="#phukien">Phụ kiện</a></li>
+            </Ul>
+            <!-----------------icon------------->
+            <div class="nav-icons">
+                <a href="dangky-dangnhap.html" class="user"><i class='bx bxs-user'></i></a>
+                <a href="#" class="cart" onclick="openPaymentPopup(event)">
+                    <i class='bx bxs-cart'></i>
+                    <span id="cartCount">0</span>
+                </a>
+            
+                <div class="overlay" id="paymentOverlay">
+                    <div class="payment-popup" id="paymentPopup">
+                        <button class="close-btn" onclick="closePaymentPopup()">x</button>
+                        <div id="paymentContent">
+                            <!-- Nội dung trang thanhh toány -->
+                        </div>
+                    </div>
+                <i class='bx bx-menu' id="menu-icon"></i>
+            </div>
+        </div>
+    </header>
+    <!-------------trang chu---------->
+    <section class="search-h" id="trangchu">
+        <!---------------trang chu timkiem------------------>
+            <div class="search-bar">
+                <i class="uil uil-search"></i>
+                <input type="search" id="searchInput" placeholder="tìm kiếm sản phẩm trên Tech-Store ?">
+            </div>
+        <div id="suggestions" class="suggestions"></div>
+    </section>
+    <section class="home" id="trangchu">
+        <!---------------trang chu tw------------------>
+        <div class="home-container container">
+        <div class="home-text">
+            <h1>Giới Thiệu<br>Iphone 15 Series</h1>
+            <p>Thiết kế:Nguyên khối <br>
+                Chất liệu: Khung Titan & Mặt lưng kính cường lực <br>
+                Kích thước, khối lượng:Dài 159.9 mm - Ngang 76.7 mm - Dày 8.25 mm - Nặng 221 g <br>
+                Thời điểm ra mắt: 09/2023 <br>
+                <br>
+                <!--------------------cuuoi trang chu---------------->
+                <a href="Dulieu/thontinsp.html" class="btn">Xem chi tiết</a>
+            </div>
+              <!-------------ảnh trang chủ---------->
+            <div class="home-img">
+                <img id="slideshow" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone15pro-digitalmat-gallery-1-202309_GEO_US?wid=728&hei=666&fmt=png-alpha&.v=1693346851451">
+        </div>
+        </div>
+    </section>
+    <!-----------------fea------------->
+    <section class="featured" id="noibat">
+        <!---------------------heading--------------->
+        <div class="heading">
+            <h2>Nổi Bật <span>Danh Mục</span></h2>
+        </div>
+        <div class="featured-container container">
+             <!------------------box1----------->
+             <div class="box">
+                <img src="image/ip15.jpg">
+                <div class="text">
+                    <h2>Apple Iphone <br>Iphone 15 Pro</h2>
+                    <a href="Dulieu/chitiethome/iphone.html">Chi tiết</a>
+                </div>
+             </div>
+             <!--------------bx2------------->
+             <div class="box">
+                
+                <div class="text">
+                    <h2>Samsung <br>Galaxy s24</h2>
+                    <a href="Dulieu/chitiethome/galaxy.html">Chi tiết</a>
+                </div>
+                <img src="image/sss24.png " alt="">
+             </div>
+        </div>
+    </section>
+<!--------------shop------------>
+<section class="shop" id="cuahang">
+    <div class="heading">
+        <h2><span>Cửa hàng </span></h2>
+    </div>
+
+    <!-------------------------------phan cua hang---------------------------------->
+    <div class="shop-container container">
+        <!-- Các sản phẩm -->
+        <div class="box" id="iphone15ProMax">
+           <a href="chitietsp/iphone15ProMax.html"> <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_300x300/https://cdn.tgdd.vn/Products/Images/42/305658/s16/iphone-15-pro-max-blue-1-2-650x650.png"></a>
+            <h2>Iphone 15 Pro Max</h2>
+            <span>29.590.000₫</span>
+            <a href="#cuahang" onclick="addToCart('Iphone 15 Pro Max', 29590000, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_300x300/https://cdn.tgdd.vn/Products/Images/42/305658/s16/iphone-15-pro-max-blue-1-2-650x650.png')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="iphone13">
+            <a href="chitietsp/ip13.html"><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-xanh-la-thumb-new-600x600.jpg"></a>
+            <h2>Điện thoại iPhone 13 128GB</h2>
+            <span>13.990.000₫</span>
+            <a href="#cuahang" onclick="addToCart('Điện thoại iPhone 13 128GB', 13990000, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-xanh-la-thumb-new-600x600.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="iphone15Plus">
+            <a href="chitietsp/15pl.html"><img src="https://cdn.tgdd.vn/Products/Images/42/303716/iphone-15-xanh-la-thumb-600x600.jpg"></a>
+            <h2>Iphone 15 Plus</h2>
+            <span>17.590.000₫</span>
+            <a href="#iphone13" onclick="addToCart('Iphone 15 Plus', 17590000, 'https:https://cdn.tgdd.vn/Products/Images/42/303716/iphone-15-xanh-la-thumb-600x600.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="iphone11">
+            <a href="chitietsp/11.html"><img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_300x300/https://cdn.tgdd.vn/Products/Images/42/213031/s16/iphone-12-white-1-2-3-650x650.png"></a>
+            <h2>Iphone 11</h2>
+            <span>10.590.000₫</span>
+            <a href="#iphone15Plus" onclick="addToCart('Iphone 11', 10590000, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_300x300/https://cdn.tgdd.vn/Products/Images/42/213031/s16/iphone-12-white-1-2-3-650x650.png')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="samsungS23Ultra">
+            <a href="chitietsp/ss24.html"><img src="https://cdn.tgdd.vn/Products/Images/42/249948/samsung-galaxy-s23-ultra-kem-1-1.jpg"></a>
+            <h2>Samsung Galaxy S23 Ultra 5G</h2>
+            <span>24.990.000₫</span>
+            <a href="#iphone11" onclick="addToCart('Samsung Galaxy S23 Ultra 5G', 24990000, 'https://cdn.tgdd.vn/Products/Images/42/249948/samsung-galaxy-s23-ultra-kem-1-1.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="xiaomiRedmi12">
+            <a href="chitietsp/rm12.html"><img src="https://cdn.tgdd.vn/Products/Images/42/307556/xiaomi-redmi-12-bac-1-2.jpg"></a>
+            <h2>Xiaomi Redmi 12 4GB</h2>
+            <span>3.040.000₫</span>
+            <a href="chitietsp/rm12.html" onclick="addToCart('Xiaomi Redmi 12 4GB', 3040000, 'https://cdn.tgdd.vn/Products/Images/42/307556/xiaomi-redmi-12-bac-1-2.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="oppoReno11F">
+            <a href="chitietsp/op11f.html"><img src="https://cdn.tgdd.vn/Products/Images/42/321895/oppo-reno-11f-tim-1.jpg"></a>
+            <h2> OPPO Reno11 F 5G</h2>
+            <span>8.690.000₫</span>
+            a<a href="#samsungS23Ultra" onclick="addToCart('OPPO Reno11 F 5G', 8690000, 'https://cdn.tgdd.vn/Products/Images/42/321895/oppo-reno-11f-tim-1.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="oppoA58">
+            <a href="chitietsp/opa58.html"><img src="https://cdn.tgdd.vn/Products/Images/42/311354/oppo-a58-xanh-8gb-1.jpg"></a>
+            <h2>OPPO A58 8GB</h2>
+            <span>5.990.000₫</span>
+            <a href="#xiaomiRedmi12" onclick="addToCart('OPPO A58 8GB', 5990000, 'https://cdn.tgdd.vn/Products/Images/42/311354/oppo-a58-xanh-8gb-1.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="xiaomi14">
+            <a href="chitietsp/mi14.html"><img src="https://cdn.tgdd.vn/Products/Images/42/298538/xiaomi-14-xanh-1.jpg"></a>
+            <h2>Xiaomi 14 5G 512GB</h2>
+            <span>21.490.000₫</span>
+            <a href="#oppoReno11F" onclick="addToCart('Xiaomi 14 5G 512GB',21490000, 'https://cdn.tgdd.vn/Products/Images/42/298538/xiaomi-14-xanh-1.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="xiaomi13T">
+            <a href="chitietsp/mi13.html"><img src="https://cdn.tgdd.vn/Products/Images/42/309814/xiaomi-13t-xanh-duong-1.jpg"></a>
+            <h2> Xiaomi 13T 5G 8GB</h2>
+            <span>10.690.000₫</span>
+            <a href="#oppoA58" onclick="addToCart('Xiaomi 13T 5G 8GB',10690000, 'https://cdn.tgdd.vn/Products/Images/42/309814/xiaomi-13t-xanh-duong-1.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+    </div>
+<!------------------------------------------------------------------------------------------------>
+</section>
+<!------------------------container--------------------------->
+<section class="shop" id="phukien">
+    <div class="heading">
+        <h2><span>Phụ kiện</span></h2>
+    </div>
+    
+    <!-------------------------------phan moi cua hang---------------------------------->
+    <div class="shop-container container">
+        <div class="box" id="avaJP299">
+            <a href="https://www.thegioididong.com/sac-dtdd/pin-sac-du-phong-polymer-10000mah-ava-jp299"><img src="https://cdn.tgdd.vn/Products/Images/57/310262/pin-sac-du-phong-polymer-10000mah-ava-jp299-thumb-1-600x600.jpg"></a>
+            <h2>Sạc dự phòng AVA+ JP299</h2>
+            <span>190.000₫ </span>
+            <a href="#phukien" onclick="addToCart('Sạc dự phòng AVA+ JP299',190000, 'https://cdn.tgdd.vn/Products/Images/54/322215/tai-nghe-bluetooth-true-wireless-ava-freego-pt62-trang-tb-600x600.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="avaJP299">
+            <a href="https://www.thegioididong.com/tai-nghe/tai-nghe-bluetooth-true-wireless-ava-freego-pt62"></a><img src="https://cdn.tgdd.vn/Products/Images/54/322215/tai-nghe-bluetooth-true-wireless-ava-freego-pt62-trang-tb-600x600.jpg"></a>
+            <h2>Tai nghe Bluetooth AVA+ PT62</h2>
+            <span>310.000₫ </span>
+            <a href="#phukien" onclick="addToCart('Tai nghe Bluetooth AVA+ PT62',310000 , 'https://cdn.tgdd.vn/Products/Images/57/310262/pin-sac-du-phong-polymer-10000mah-ava-jp299-thumb-1-600x600.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="sonySRSXB100">
+            <a href="https://www.thegioididong.com/loa-laptop/loa-bluetooth-sony-srs-xb100"><img src="https://cdn.tgdd.vn/Products/Images/2162/312682/loa-bluetooth-sony-srs-xb100-thumb-1-600x600.jpg"></a>
+            <h2>Loa Bluetooth Sony SRS-XB100</h2>
+            <span>1.290.000₫ </span>
+            <a href="#avaJP299" onclick="addToCart('Loa Bluetooth Sony SRS-XB100',1290000 , 'https://cdn.tgdd.vn/Products/Images/2162/242826/bluetooth-jbl-go-3-xanh-den-220424-103724-600x600.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+        <div class="box" id="samsungAdapter45W">
+            <a href="https://www.thegioididong.com/adapter-sac/bo-adapter-sac-kem-cap-type-c-type-c-pd-45w-samsung-ep-t4511"><img src="https://cdn.tgdd.vn/Products/Images/9499/325099/bo-adapter-sac-kem-cap-type-c-type-c-pd-45w-samsung-ep-t4511xb-600x600.jpg"></a>
+            <h2>Bộ Adapter sạc PD 45W Samsung</h2>
+            <span>1.190.000₫</span>
+            <a href="#avaJP299" onclick="addToCart('Bộ Adapter sạc PD 45W Samsung',1190000, 'https://cdn.tgdd.vn/Products/Images/9499/325099/bo-adapter-sac-kem-cap-type-c-type-c-pd-45w-samsung-ep-t4511xb-600x600.jpg')"><i class="bx bx-cart-add"></i></a>
+        </div>
+</section>
+<!------------------------------------------------------------------------------------------------>
+
+<section class="newletter container">
+    <div class="heading">
+        <h2><span>Nhận ưu đãi từ TechBox_Store</span></h2>
+    </div>
+    <form id="newsletterForm" action="javascript:void(0);">
+        <input type="email" name="" id="email" placeholder="Nhập địa chỉ email" class="email-box" required>
+        <input type="submit" value="Theo dõi" class="btn">
+    </form>
+</section>
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+<!-------------------------------footer---------------------------->
+<section class="footer container" id="cuoitrang">
+    <div class="footer-box">
+        <!------------logo----------->
+        <a href="#" class="logo">
+            <img src="image/logo-full.png" alt="">
+        </a>
+        <div class="social">
+            <a href="https://www.facebook.com/vanhoang.nguyen.9216778/"><i class='bx bxl-facebook' ></i></a>
+            <a href="https://www.instagram.com/nguyenhoang.1809/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.youtube.com/"><i class='bx bxl-youtube'></i></a>
+        </div>
+    </div>
+    <div class="footer-box">
+        <h3>Điều hướng</h3>
+        <a href="#trangchu">Trang chủ</a>
+        <a href="#noibat">Nổi bật</a>
+        <a href="#cuahang">Cửa hàng</a>
+        <a href="#hangmoi">tin tức</a>
+    </div>
+    
+    <div class="footer-box">
+        <h3>Pháp Lý</h3>
+        <a href="#cuoitrang" onclick="openPrivacyPolicyPopup()">Chính sách quyền riêng tư</a>
+        <a href="#cuoitrang" onclick="openRefundPolicyPopup()">Chính sách hoàn tiền</a>
+        <a href="#cuoitrang" onclick="openTermsOfServicePopup()">Điều khoản sử dụng</a>
+        <a href="#cuoitrang" onclick="openDeliveryPaymentPolicyPopup()">giao hàng và thanh toán</a>
+
+        <div id="privacyPolicyPopup" class="overlay">
+            <div class="popup">
+                <button class="close-btn" onclick="closePopup('privacyPolicyPopup')">X</button>
+                <div id="privacyPolicyContent"></div>
+            </div>
+        </div>
+        
+        <div id="refundPolicyPopup" class="overlay">
+            <div class="popup">
+                <button class="close-btn" onclick="closePopup('refundPolicyPopup')">X</button>
+                <div id="refundPolicyContent"></div>
+            </div>
+        </div>
+        
+        <div id="termsOfServicePopup" class="overlay">
+            <div class="popup">
+                <button class="close-btn" onclick="closePopup('termsOfServicePopup')">X</button>
+                <div id="termsOfServiceContent"></div>
+            </div>
+        </div>
+    </div>
+    <div id="deliveryPaymentPolicyPopup" class="overlay">
+        <div class="popup">
+            <button class="close-btn" onclick="closePopup('deliveryPaymentPolicyPopup')">X</button>
+            <div id="deliveryPaymentPolicyContent"></div>
+        </div>
+    </div>
+   
+    <div class="footer-box">
+        <h2>Chi nhánh</h2>
+        <a href="https://www.google.com/maps/place/Tp.+Tr%C3%A0+Vinh,+Tr%C3%A0+Vinh,+Vi%E1%BB%87t+Nam/@9.9516097,106.2624545,12z/data=!3m1!4b1!4m6!3m5!1s0x31a017515cc705df:0xade5b5649cd70f79!8m2!3d9.9513316!4d106.3346061!16zL20vMDdtMjA4?entry=ttu">Trà Vinh</a>
+        <a href="https://www.google.com/maps/place/Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.755446,106.0357799,9z/data=!3m1!4b1!4m6!3m5!1s0x317529292e8d3dd1:0xf15f5aad773c112b!8m2!3d10.8230989!4d106.6296638!16zL20vMGhuNGg?entry=ttu">TP Hồ Chí Minh</a>
+        <a href="https://www.google.com/maps/place/C%E1%BA%A7n+Th%C6%A1,+Vi%E1%BB%87t+Nam/@10.1129134,104.9249412,9z/data=!4m6!3m5!1s0x31a0629f927382cd:0x72a463d91109ec67!8m2!3d10.0653203!4d105.5591218!16s%2Fg%2F1w4533dx?entry=ttu">TP Cần Thơ</a>
+        <a href="https://www.google.com/maps/place/Tp.+B%E1%BA%BFn+Tre,+B%E1%BA%BFn+Tre,+Vi%E1%BB%87t+Nam/@10.237553,106.2931499,12z/data=!3m1!4b1!4m6!3m5!1s0x310aa8f5e2e8bd09:0x9d5fd18ce4fa56bb!8m2!3d10.2433556!4d106.375551!16zL20vMDV6cjU0?entry=ttu">Bến Tre</a>
+    </div>
+</section>
+<!----------------copyright----->
+<div class="copyright">
+    <p>&#169; VanHoang 2024 All Right Reserves. </p>
+</div>
+<!----------------javacript--------------------->
+<script src="javascript/jcid.js"></script>
+</body>
+</html>
